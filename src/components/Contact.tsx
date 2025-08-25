@@ -15,10 +15,10 @@ const Contact: React.FC = () => {
 
     try {
       await emailjs.sendForm(
-        'service_d96quej', // Remplacez par votre Service ID
-        'template_dojf3gc', // Remplacez par votre Template ID
+        'service_7ts6fc4', // Remplacez par votre Service ID
+        'template_2pzf2bh', // Remplacez par votre Template ID
         form.current,
-        'pfDjEhwlbX1O7n3ur' // Remplacez par votre Public Key
+        '13iKu6MGUL6OOlnRE' // Remplacez par votre Public Key
       );
       toast.success('Message envoyé avec succès !');
       form.current.reset();
@@ -39,12 +39,14 @@ const Contact: React.FC = () => {
       }}
     >
       <div className="container mx-auto">
-        <h2 className="text-3xl font-bold text-center mb-8 text-white">Contact me</h2>
+        <h2 className="text-3xl font-bold text-center mb-8 text-white">
+          Contact me
+        </h2>
         <div className="max-w-lg mx-auto p-5">
           <form ref={form} onSubmit={handleSubmit}>
             <div className="mb-4">
               <label htmlFor="from_name" className="block text-white mb-2">
-                name
+                Name
               </label>
               <input
                 type="text"

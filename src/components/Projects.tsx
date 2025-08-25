@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaReact, FaNodeJs } from 'react-icons/fa';
-import { SiTypescript, SiTailwindcss, SiExpress, SiPython } from 'react-icons/si';
+import { SiTypescript, SiTailwindcss, SiExpress, SiPython,SiN8N, SiAngular, SiLaravel } from 'react-icons/si';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
@@ -24,7 +24,9 @@ const ProjectCard = ({ title, description, technologies, image, liveLink, source
     'Node.js': <FaNodeJs className="inline-block mr-1" />,
     Express: <SiExpress className="inline-block mr-1" />,
     Python: <SiPython className="inline-block mr-1" />,
-    python: <SiPython className="inline-block mr-1" />,
+    N8N: <SiN8N className="inline-block mr-1" />,
+    Angular: <SiAngular className="inline-block mr-1" />,
+    Laravel: <SiLaravel className="inline-block mr-1" />,
   };
 
   return (
@@ -62,10 +64,32 @@ const ProjectCard = ({ title, description, technologies, image, liveLink, source
 const Projects = () => {
   const projects = [
     {
+      title: 'chatbot whatsapp',
+      description: 'an automated whatsapp chatbot for customer service and lead generation.',
+      technologies: ['N8N', 'api Meta for whatsapp business'],
+      image: './chatbot.png',
+      liveLink: 'https://youtu.be/6pz_O7Hb8To',
+    },
+    {
+      title: 'email sorters',
+      description: 'an automated email sorting system that categorizes incoming emails based on their content using n8n and gmail API.',
+      technologies: ['N8N', 'google API'],
+      image: './triEmail.png',
+      liveLink: 'https://www.tiktok.com/@kami_dev7/video/7514374369703988486?is_from_webapp=1&sender_device=pc&web_id=7539599369285420549',
+      sourceLink: 'https://github.com/kamikael/triEmail'
+    }, {
+      title: 'Document generator app',
+      description: 'who from an audio  allowed me to create a report, minutes, and a meeting note',
+      technologies: ['N8N', 'open ai API', 'whisper API', 'TypeScript','Tailwind CSS', 'React', 'ably'],
+      image: './transrib.png',
+      liveLink: 'https://www.tiktok.com/@kami_dev7/video/7520691632228797702?is_from_webapp=1&sender_device=pc&web_id=7539599369285420549',
+      sourceLink: 'https://github.com/kamikael/Document-generator-app'
+    },
+    {
       title: 'e-commerce',
       description: 'Designed specifically for sale in Africa.',
       technologies: ['React', 'TypeScript', 'Tailwind CSS'],
-      image: '../../public/screenWebsite.png',
+      image: './screenwebsite.png',
       liveLink: 'https://kamikael.github.io/website/',
       sourceLink: 'https://github.com/kamikael/website',
     },
@@ -73,7 +97,7 @@ const Projects = () => {
       title: 'SAAS (in progress)',
       description: 'An application to track the best-selling products in Africa with videos and product sheets.',
       technologies: ['React', 'Node.js', 'Express', 'Tailwind CSS', 'TypeScript', 'Python'],
-      image: '../../public/saas.png',
+      image: './saas.png',
     },
   ];
 
