@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const Hero: React.FC = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
   return (
     <section
       id="hero"
-      className="h-screen flex items-center justify-center px-6 md:px-12 relative overflow-hidden"
+      className="min-h-screen flex items-center justify-center px-6 md:px-12 lg:px-20 relative overflow-hidden"
       style={{
         background: `
           radial-gradient(circle at 50% 50%, rgba(30, 58, 138, 0.4) 0%, transparent 70%),
@@ -12,62 +18,171 @@ const Hero: React.FC = () => {
         `,
       }}
     >
-      <div className="text-left z-0">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 leading-tight">
-         Hey, I am <span className="text-white">Kami !</span>
-        </h1>
-        <p className="text-lg sm:text-xl md:text-2xl text-white mb-8 max-w-md">
-          Passionate developer creating high-performance web applications and expert in AI automation
-        </p>
-        <a
-          href="#projects"
-          className="bg-blue-400 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-500 transition duration-300"
-        >
-          See my projects
-        </a>
+      {/* Gradient Orbs Background */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
       </div>
-      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-1/2 h-full pointer-events-none">
-        <div
-          className="absolute top-1/4 -left-4 w-12 h-12 bg-blue-300 rounded-full opacity-70 animate-drop"
-          style={{
-            animationDelay: '0s',
-            animationDuration: '2s',
-          }}
-        ></div>
-        <div
-          className="absolute top-1/2 -left-8 w-10 h-10 bg-blue-300 rounded-full opacity-60 animate-drop"
-          style={{
-            animationDelay: '0.5s',
-            animationDuration: '2.2s',
-          }}
-        ></div>
-        <div
-          className="absolute top-3/4 -left-2 w-14 h-14 bg-blue-300 rounded-full opacity-50 animate-drop"
-          style={{
-            animationDelay: '1s',
-            animationDuration: '2.4s',
-          }}
-        ></div>
+
+      {/* Main Content */}
+      <div className={`relative z-10 max-w-4xl mx-auto transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        <div className="space-y-6 md:space-y-8">
+          {/* Greeting Badge */}
+          <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 backdrop-blur-sm border border-white/10 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
+            <span className="relative flex h-3 w-3">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+            </span>
+            <span className="text-sm text-gray-300 font-medium">Available for opportunities</span>
+          </div>
+
+          {/* Main Heading */}
+          <h1 className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            Hey, I am{' '}
+            <span className="relative inline-block">
+              <span className="relative z-10 bg-gradient-to-r from-blue-400 via-purple-400 to-blue-400 bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]">
+                Kami
+              </span>
+              <span className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 blur-xl opacity-50"></span>
+            </span>
+            !
+          </h1>
+
+          {/* Description */}
+          <p className={`text-lg sm:text-xl md:text-2xl text-gray-300 max-w-2xl leading-relaxed transition-all duration-700 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            Passionate developer creating{' '}
+            <span className="text-white font-semibold">high-performance web applications</span> and expert in{' '}
+            <span className="text-white font-semibold">AI automation</span>
+          </p>
+
+          {/* CTA Buttons */}
+          <div className={`flex flex-wrap gap-4 transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            <a
+              href="#projects"
+              className="group relative px-8 py-4 rounded-full font-semibold overflow-hidden transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500/50"
+            >
+              <span className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500"></span>
+              <span className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+              <span className="relative z-10 text-white flex items-center gap-2">
+                See my projects
+                <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </span>
+            </a>
+
+            <a
+              href="#contact"
+              className="group px-8 py-4 rounded-full font-semibold border-2 border-white/20 text-white hover:bg-white/10 hover:border-white/40 transition-all duration-300 hover:scale-105 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50"
+            >
+              Get in touch
+            </a>
+          </div>
+
+          {/* Social Proof / Stats */}
+          <div className={`flex flex-wrap gap-8 pt-8 border-t border-white/10 transition-all duration-700 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            <div className="flex flex-col">
+              <span className="text-3xl font-bold text-white">5+</span>
+              <span className="text-sm text-gray-400">Projects Completed</span>
+            </div>
+            <div className="flex flex-col">
+              <span className="text-3xl font-bold text-white">3+</span>
+              <span className="text-sm text-gray-400">Technologies</span>
+            </div>
+            <div className="flex flex-col">
+              <span className="text-3xl font-bold text-white">100%</span>
+              <span className="text-sm text-gray-400">Client Satisfaction</span>
+            </div>
+          </div>
+        </div>
       </div>
+
+      {/* Animated Water Drops - Enhanced */}
+      <div className="absolute top-0 right-0 w-1/2 h-full pointer-events-none overflow-hidden">
+        {[...Array(6)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute w-12 h-12 bg-blue-400/30 rounded-full animate-drop"
+            style={{
+              top: `${Math.random() * 50}%`,
+              right: `${Math.random() * 50}%`,
+              animationDelay: `${i * 0.7}s`,
+              animationDuration: `${2 + Math.random()}s`,
+              opacity: 0.4 + Math.random() * 0.3,
+            }}
+          ></div>
+        ))}
+      </div>
+
+      {/* Floating Particles */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        {[...Array(20)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute w-1 h-1 bg-white/40 rounded-full animate-float"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 5}s`,
+              animationDuration: `${5 + Math.random() * 10}s`,
+            }}
+          ></div>
+        ))}
+      </div>
+
       <style>
         {`
           @keyframes drop {
             0% {
               transform: translateY(-100%) scale(1);
-              opacity: 0.7;
+              opacity: 0.5;
             }
             70% {
-              transform: translateY(0) scale(1);
-              opacity: 0.7;
+              transform: translateY(100vh) scale(1);
+              opacity: 0.3;
             }
             100% {
-              transform: translateY(0) scale(2);
+              transform: translateY(100vh) scale(2);
               opacity: 0;
               border-radius: 50% 50% 50% 0;
             }
           }
           .animate-drop {
-            animation: drop infinite;
+            animation: drop infinite ease-in;
+          }
+
+          @keyframes float {
+            0%, 100% {
+              transform: translateY(0) translateX(0);
+              opacity: 0;
+            }
+            10% {
+              opacity: 1;
+            }
+            90% {
+              opacity: 1;
+            }
+            50% {
+              transform: translateY(-100px) translateX(50px);
+            }
+          }
+          .animate-float {
+            animation: float infinite ease-in-out;
+          }
+
+          @keyframes gradient {
+            0% {
+              background-position: 0% 50%;
+            }
+            50% {
+              background-position: 100% 50%;
+            }
+            100% {
+              background-position: 0% 50%;
+            }
+          }
+          .animate-gradient {
+            animation: gradient 3s ease infinite;
           }
         `}
       </style>
