@@ -115,23 +115,35 @@ const About: React.FC = () => {
                 ))}
               </div>
 
-              {/* CTA Button */}
-              <div className="pt-6">
-                <a
-                  href="#contact"
-                  className="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold rounded-full shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500/50"
-                >
-                  Let's work together
-                  <svg 
-                    className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" 
-                    fill="none" 
-                    stroke="currentColor" 
-                    viewBox="0 0 24 24"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </a>
-              </div>
+             {/* CTA Buttons */}
+<div className="pt-6 flex flex-wrap gap-4">
+  <a
+    href="#contact"
+    className="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold rounded-full shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500/50"
+  >
+    Let's work together
+    <svg 
+      className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" 
+      fill="none" 
+      stroke="currentColor" 
+      viewBox="0 0 24 24"
+    >
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+    </svg>
+  </a>
+
+  {/* NOUVEAU BOUTON CV */}
+  <a
+    href="./cv.pdf"
+    download="Kami_CV.pdf"
+    className="group inline-flex items-center gap-3 px-8 py-4 bg-white border-2 border-gray-200 text-gray-800 font-semibold rounded-full shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:border-blue-500 hover:text-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500/50"
+  >
+    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+    </svg>
+    Download CV
+  </a>
+</div>
             </div>
           </div>
         </div>

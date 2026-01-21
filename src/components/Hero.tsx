@@ -55,29 +55,41 @@ const Hero: React.FC = () => {
             <span className="text-white font-semibold">AI automation</span>
           </p>
 
-          {/* CTA Buttons */}
-          <div className={`flex flex-wrap gap-4 transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            <a
-              href="#projects"
-              className="group relative px-8 py-4 rounded-full font-semibold overflow-hidden transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500/50"
-            >
-              <span className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500"></span>
-              <span className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-              <span className="relative z-10 text-white flex items-center gap-2">
-                See my projects
-                <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </span>
-            </a>
+         {/* CTA Buttons */}
+<div className={`flex flex-wrap gap-4 transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+  <a
+    href="#projects"
+    className="group relative px-8 py-4 rounded-full font-semibold overflow-hidden transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500/50"
+  >
+    <span className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500"></span>
+    <span className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+    <span className="relative z-10 text-white flex items-center gap-2">
+      See my projects
+      <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+      </svg>
+    </span>
+  </a>
 
-            <a
-              href="#contact"
-              className="group px-8 py-4 rounded-full font-semibold border-2 border-white/20 text-white hover:bg-white/10 hover:border-white/40 transition-all duration-300 hover:scale-105 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50"
-            >
-              Get in touch
-            </a>
-          </div>
+  {/* NOUVEAU BOUTON CV */}
+  <a
+    href="./cv.pdf"
+    download="Kami_CV.pdf"
+    className="group px-8 py-4 rounded-full font-semibold border-2 border-white/20 text-white hover:bg-white/10 hover:border-white/40 transition-all duration-300 hover:scale-105 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50 flex items-center gap-2"
+  >
+    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+    </svg>
+    Download CV
+  </a>
+
+  <a
+    href="#contact"
+    className="group px-8 py-4 rounded-full font-semibold border-2 border-white/20 text-white hover:bg-white/10 hover:border-white/40 transition-all duration-300 hover:scale-105 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50"
+  >
+    Get in touch
+  </a>
+</div>
 
           {/* Social Proof / Stats */}
           <div className={`flex flex-wrap gap-8 pt-8 border-t border-white/10 transition-all duration-700 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
@@ -93,7 +105,7 @@ const Hero: React.FC = () => {
               <span className="text-3xl font-bold text-white">100%</span>
               <span className="text-sm text-gray-400">Client Satisfaction</span>
             </div>
-          </div>
+          </div>  
         </div>
       </div>
 
